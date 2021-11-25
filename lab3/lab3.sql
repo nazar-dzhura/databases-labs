@@ -60,8 +60,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `lab_1`.`group` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id`)),
-  INDEX `name`(`name`ASC) VISIBLE
+  PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
 
@@ -78,7 +77,6 @@ CREATE TABLE IF NOT EXISTS `lab_1`.`user` (
   PRIMARY KEY (`id`),
   INDEX `fk_user_status1_idx` (`status_id` ASC) VISIBLE,
   INDEX `fk_user_group1_idx` (`group_id` ASC) VISIBLE,
-  INDEX `nickname`(`nickname`ASC) VISIBLE,
   CONSTRAINT `fk_user_status1`
     FOREIGN KEY (`status_id`)
     REFERENCES `lab_1`.`status` (`id`)
