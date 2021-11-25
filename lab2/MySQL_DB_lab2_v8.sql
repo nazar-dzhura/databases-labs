@@ -7,7 +7,8 @@ SELECT * FROM pc
     
 -- 2. Вивести всі моделі ПК, у номерах яких є хоча б
 -- дві одинички.    
-SELECT * FROM pc WHERE model LIKE '%1%1%';
+SELECT model FROM pc 
+	WHERE model LIKE '%1%1%';
 
 -- 3. Для кораблів таблиці Ships вивести їх водотоннаж-
 -- ність.
@@ -17,7 +18,7 @@ SELECT name, displacement FROM ships
 -- 4. Знайти моделі та ціни ноутбуків, вартість яких є
 -- вищою за вартість будь-якого ПК. Вивести: model, price.
 SELECT * FROM laptop
-	WHERE price > (SELECT MAX(price) FROM pc);
+	JOIN pc ON laptop.code = pc.code;
     
 -- 5. Знайдіть виробників, які б випускали ноутбуки
 -- зі швидкістю 500 МГц та нижче. Виведіть: maker.    
@@ -39,8 +40,7 @@ SELECT time_out, COUNT(*) AS race_count FROM trip
     
 -- 8. Знайдіть виробників, які б випускали ноутбуки з
 -- мінімальною швидкістю не менше 600 МГц. Вивести: maker,
--- мінімальна швидкість. (Підказка: використовувати підзапити в якості
--- обчислювальних стовпців)
+-- мінімальна швидкість.
 SELECT p.maker FROM laptop l
 	LEFT JOIN product p ON l.model = p.model 
 	WHERE l.speed >= 600;
