@@ -139,6 +139,15 @@ CREATE TABLE IF NOT EXISTS `lab_1`.`game` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+CREATE INDEX idx_nickname
+ON `user` (nickname);
+
+CREATE INDEX idx_gameName
+ON `game` (`name`);
+
+CREATE INDEX idx_groupName
+ON `group` (`name`);
+
 -- developer
 
 INSERT INTO `lab_1`.`developer` (`id`,`name`) VALUES (1,'4A Games');
@@ -213,16 +222,16 @@ INSERT INTO `lab_1`.`system_requirement` (`id`,`type`,`minimal`,`recomended`) VA
 
 -- user 
 
-INSERT INTO `lab_1`.`user` (`id`,`nickname`,`status_id`,`last_played`,`total_playtime`,`group_id`) VALUES (1,'Cartman',2,'02.10.2021',472,8);
-INSERT INTO `lab_1`.`user` (`id`,`nickname`,`status_id`,`last_played`,`total_playtime`,`group_id`) VALUES (2,'Stan',4,'03.10.2021',1276,NULL);
-INSERT INTO `lab_1`.`user` (`id`,`nickname`,`status_id`,`last_played`,`total_playtime`,`group_id`) VALUES (3,'Kyle',1,'22.11.2021',11,5);
+INSERT INTO `lab_1`.`user` (`id`,`nickname`,`status_id`,`last_played`,`total_playtime`,`group_id`) VALUES (1,'Cartman',2,'2018-10-20',472,8);
+INSERT INTO `lab_1`.`user` (`id`,`nickname`,`status_id`,`last_played`,`total_playtime`,`group_id`) VALUES (2,'Stan',4,'2018-10-20',1276,NULL);
+INSERT INTO `lab_1`.`user` (`id`,`nickname`,`status_id`,`last_played`,`total_playtime`,`group_id`) VALUES (3,'Kyle',1,'2018-10-20',11,5);
 INSERT INTO `lab_1`.`user` (`id`,`nickname`,`status_id`,`last_played`,`total_playtime`,`group_id`) VALUES (4,'Kenny',3,NULL,NULL,2);
-INSERT INTO `lab_1`.`user` (`id`,`nickname`,`status_id`,`last_played`,`total_playtime`,`group_id`) VALUES (5,'Bart',1,'09.09.2021',375,7);
-INSERT INTO `lab_1`.`user` (`id`,`nickname`,`status_id`,`last_played`,`total_playtime`,`group_id`) VALUES (6,'Rick',4,'25.08.2021',1357,9);
-INSERT INTO `lab_1`.`user` (`id`,`nickname`,`status_id`,`last_played`,`total_playtime`,`group_id`) VALUES (7,'Morty',2,'27.04.2021',4557,1);
-INSERT INTO `lab_1`.`user` (`id`,`nickname`,`status_id`,`last_played`,`total_playtime`,`group_id`) VALUES (8,'Robert',2,'14.07.2021',266,10);
-INSERT INTO `lab_1`.`user` (`id`,`nickname`,`status_id`,`last_played`,`total_playtime`,`group_id`) VALUES (9,'Eva',1,'25.11.2021',53,NULL);
-INSERT INTO `lab_1`.`user` (`id`,`nickname`,`status_id`,`last_played`,`total_playtime`,`group_id`) VALUES (10,'Tom',3,'28.09.2021',1356,6);
+INSERT INTO `lab_1`.`user` (`id`,`nickname`,`status_id`,`last_played`,`total_playtime`,`group_id`) VALUES (5,'Bart',1,'2018-10-20',375,7);
+INSERT INTO `lab_1`.`user` (`id`,`nickname`,`status_id`,`last_played`,`total_playtime`,`group_id`) VALUES (6,'Rick',4,'2018-10-20',1357,9);
+INSERT INTO `lab_1`.`user` (`id`,`nickname`,`status_id`,`last_played`,`total_playtime`,`group_id`) VALUES (7,'Morty',2,'2018-10-20',4557,1);
+INSERT INTO `lab_1`.`user` (`id`,`nickname`,`status_id`,`last_played`,`total_playtime`,`group_id`) VALUES (8,'Robert',2,'2018-10-20',266,10);
+INSERT INTO `lab_1`.`user` (`id`,`nickname`,`status_id`,`last_played`,`total_playtime`,`group_id`) VALUES (9,'Eva',1,'2018-10-20',53,NULL);
+INSERT INTO `lab_1`.`user` (`id`,`nickname`,`status_id`,`last_played`,`total_playtime`,`group_id`) VALUES (10,'Tom',3,'2018-10-20',1356,6);
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
